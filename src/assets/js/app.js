@@ -21,6 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
     select.appendChild(opcionVacia);
   }
 
+  function limpiarFormulario() {
+    formulario.reset();
+    limpiarSelect(selectSucursal);
+  }
+
   // Agrega opciones al select usando los campos recibidos desde el endpoint.
   function agregarOpciones(select, datos, campoValor, campoTexto) {
     datos.forEach((item) => {
@@ -98,6 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const resultado = await respuesta.json();
       alert(resultado.message);
+
+      if (resultado.success) {
+        limpiarFormulario();
+      }
     } catch (error) {
       alert('No se pudo procesar la solicitud.');
     }
