@@ -55,6 +55,8 @@ CREATE TABLE productos (
     id_sucursal INTEGER NOT NULL,
     id_moneda INTEGER NOT NULL,
 
+    fecha_creacion TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
     CONSTRAINT fk_producto_bodega
         FOREIGN KEY (id_bodega)
         REFERENCES bodegas(id_bodega),
