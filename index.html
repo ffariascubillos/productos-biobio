@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Producto</title>
+    <link rel="stylesheet" href="./src/assets/css/estilos.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <h1>Formulario de Producto</h1>
+        <form action="./src/api/guardar.php" method="post">
+          <div class="form-row">
+            <div class="form-col">
+              <label class="form-label" for="cod_pro">Código</label>
+              <input
+                class="form-control"
+                type="text"
+                name="cod_pro"
+                id="cod_pro"
+                placeholder="Ingrese Código del Producto" />
+            </div>
+            <div class="form-col">
+              <label class="form-label" for="nombre_pro">Nombre</label>
+              <input
+                class="form-control"
+                type="text"
+                name="nombre_pro"
+                id="nombre_pro"
+                placeholder="Ingrese Nombre del Producto" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-col">
+              <label class="form-label" for="bodega">Bodega</label>
+              <select class="form-control" name="bodega" id="bodega">
+                <option value="">Seleccione una Bodega</option>
+                <option value="1">Bodega 1</option>
+                <option value="2">Bodega 2</option>
+                <option value="3">Bodega 3</option>
+                <option value="4">Bodega 4</option>
+              </select>
+            </div>
+            <div class="form-col">
+              <label class="form-label" for="sucursal">Sucursal</label>
+              <select class="form-control" name="sucursal" id="sucursal">
+                <option value="">Seleccione una Sucursal</option>
+                <option value="1">Sucursal 1</option>
+                <option value="2">Sucursal 2</option>
+                <option value="3">Sucursal 3</option>
+                <option value="4">Sucursal 4</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-col">
+              <label class="form-label" for="moneda">Moneda</label>
+              <select class="form-control" name="moneda" id="moneda">
+                <option value="">Seleccione una Moneda</option>
+                <option value="USD">DÓLAR</option>
+                <option value="EUR">EURO</option>
+                <option value="CLP">PESO CHILENO</option>
+                <option value="ARG">PESO ARGENTINO</option>
+              </select>
+            </div>
+            <div class="form-col">
+              <label class="form-label" for="precio">Precio</label>
+              <input
+                class="form-control"
+                type="text"
+                name="precio"
+                id="precio"
+                placeholder="Ingrese Código del Producto" />
+            </div>
+          </div>
+          <h4>Material del Producto</h4>
+          <div class="form-inline-group">
+            <div class="form-inline-group__el">
+              <input
+                type="checkbox"
+                id="plastico"
+                name="plastico"
+                value="plastico" />
+              <label for="plastico"> Plástico</label>
+            </div>
+
+            <div class="form-inline-group__el">
+              <input type="checkbox" id="metal" name="metal" value="metal" />
+              <label for="metal"> Metal</label>
+            </div>
+
+            <div class="form-inline-group__el">
+              <input type="checkbox" id="madera" name="madera" value="madera" />
+              <label for="madera"> Madera</label>
+            </div>
+
+            <div class="form-inline-group__el">
+              <input type="checkbox" id="vidrio" name="vidrio" value="vidrio" />
+              <label for="vidrio"> Vidrio</label>
+            </div>
+
+            <div class="form-inline-group__el">
+              <input type="checkbox" id="textil" name="textil" value="textil" />
+              <label for="textil"> Textil</label>
+            </div>
+          </div>
+          <div>
+            <label for="descripcion" class="form-label">Descripción</label>
+            <textarea
+              class="form-control"
+              name="descripcion"
+              id="descripcion"></textarea>
+          </div>
+          <button class="btn-submit" id="guardar" type="submit">
+            Guardar Producto
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="./src/assets/js/app.js"></script>
+  </body>
+</html>
