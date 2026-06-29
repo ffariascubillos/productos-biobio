@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const opcionVacia = document.createElement('option');
     opcionVacia.value = '';
-    opcionVacia.textContent = '';
+    opcionVacia.textContent = '-- Seleccione una opción --';
     select.appendChild(opcionVacia);
   }
 

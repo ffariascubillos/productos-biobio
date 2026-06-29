@@ -1,0 +1,92 @@
+SISTEMA DE REGISTRO DE PRODUCTOS
+
+Aplicación web para registrar productos y almacenarlos en PostgreSQL. El
+sistema carga bodegas, sucursales y monedas desde la base de datos, valida los
+datos en JavaScript y PHP, y envía el formulario mediante AJAX.
+
+REQUISITOS
+
+PHP 8.5 disponible en PATH.
+PostgreSQL 18.3 en ejecución.
+Extensiones PHP PDO, pdo_pgsql y pgsql habilitadas.
+Git para clonar el repositorio.
+pgAdmin 4 o psql para preparar la base de datos.
+
+Para comprobar la instalación, ejecuta:
+
+php --version
+php -m
+psql --version
+
+En la salida de php -m deben aparecer PDO, pdo_pgsql y pgsql.
+
+INSTALACION
+
+1. CLONAR EL REPOSITORIO
+
+Ejecuta:
+
+git clone https://github.com/ffariascubillos/productos-biobio.git
+cd productos-biobio
+
+2. CREAR E IMPORTAR LA BASE DE DATOS
+
+La base debe llamarse productos_biobio. El archivo schema.sql siempre debe
+ejecutarse antes que seed.sql.
+
+METODO CON PGADMIN 4
+
+1. Conecta pgAdmin al servidor local de PostgreSQL.
+2. Crea una base de datos llamada productos_biobio con codificación UTF-8.
+3. Abre Query Tool sobre la nueva base de datos.
+4. Ejecuta el contenido de src/sql/schema.sql.
+5. Ejecuta el contenido de src/sql/seed.sql.
+
+METODO CON PSQL
+
+Desde la carpeta del proyecto ejecuta:
+
+psql -U postgres -c "CREATE DATABASE productos_biobio WITH ENCODING 'UTF8';"
+psql -U postgres -d productos_biobio -f src/sql/schema.sql
+psql -U postgres -d productos_biobio -f src/sql/seed.sql
+
+PostgreSQL solicitará la contraseña del usuario cuando corresponda. Si psql no
+se reconoce como comando, agrégalo a PATH o utiliza pgAdmin.
+
+3. CONFIGURAR LA CONEXION
+
+Abre src/api/config.php y ajusta estos valores según tu instalación:
+
+host: localhost
+port: 5432
+dbname: productos_biobio
+user: postgres
+password: tu contraseña local de PostgreSQL
+
+No publiques credenciales reales si utilizas el proyecto fuera de un entorno
+local.
+
+4. INICIAR LA APLICACION
+
+Desde la raíz del proyecto ejecuta:
+
+php -S 127.0.0.1:8000
+
+Abre esta dirección en el navegador:
+
+http://127.0.0.1:8000
+
+Para detener el servidor, vuelve a la terminal y presiona Ctrl+C.
+
+COMPROBACION BASICA
+
+1. Confirma que las listas de bodegas y monedas se carguen al abrir la página.
+2. Selecciona una bodega y comprueba que aparezcan sus sucursales.
+3. Registra un producto válido con al menos dos materiales.
+4. Comprueba que el formulario se limpie después del registro.
+5. Intenta repetir el código y verifica que el sistema lo rechace.
+
+AUTOR
+
+Felipe Farías Cubillos
+ffariascubillos@gmail.com
