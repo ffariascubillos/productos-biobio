@@ -27,7 +27,7 @@ en el navegador y el servidor, y envío del formulario mediante AJAX.
 
 ## 📋 Requisitos
 
-- PHP Mínimo aconsejado: PHP 8.2 Versión, verificada: PHP 8.5.7
+- PHP Mínimo aconsejado: PHP 8.2, Versión verificada: PHP 8.5.7
 - PostgreSQL 18.3 en ejecución.
 - Extensiones PHP `PDO`, `pdo_pgsql` y `pgsql` habilitadas.
 - Git para clonar el repositorio.
